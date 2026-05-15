@@ -15,8 +15,10 @@ body {
 #player {
     background-color: pink;
     position: absolute;
-    /* width: 20vw;
-    height: 10vh; */
-    /* bottom: 0vh; */
-    /* left: 0vw; */
+}
+
+
+.obstacle {
+    background-color: blueviolet;
+    position: absolute;
 }
