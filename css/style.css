@@ -1,4 +1,22 @@
 body {
+    margin: 0;
+    padding: 0;
     background-color: blanchedalmond;
 }
 
+#board {
+    width: 100vw;
+    height: 100vh;
+    background-color: azure;
+    position: relative;
+}
+
+
+#player {
+    background-color: pink;
+    position: absolute;
+    /* width: 20vw;
+    height: 10vh; */
+    /* bottom: 0vh; */
+    /* left: 0vw; */
+}
