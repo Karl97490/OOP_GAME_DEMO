@@ -3,7 +3,7 @@ class Player {
     constructor() {
         this.width = 20;
         this.height = 10;
-        this.positionX = 0;
+        this.positionX = 50 - this.width / 2; // Set the position of the player element in the middle of the screen
         this.positionY = 0;
 
         this.updateUI() // Invoke the method updateUI() to the constructor to set the DOM element player's properties to the initial value
@@ -91,7 +91,7 @@ let obstacle = null
 
 /********** Intervals ************/
 
-// Create every 3s an instance of the class Obstacle 
+// Create every 3s an instance of the class Obstacle
 setInterval(function () {
     obstacle = new Obstacle()
     obstacleArr.push(obstacle) // Store the obstacles instances to an array
@@ -100,9 +100,18 @@ setInterval(function () {
 
 setInterval(function () {
     obstacleArr.forEach((obstacle) => {
-        obstacle.moveDown() // moveDown() every obstacles instances stored in the array 
+        obstacle.moveDown() // moveDown() every obstacles instances stored in the array
+
+        if (
+            player.positionX < obstacle.positionX + obstacle.width &&
+            player.positionX + player.width > obstacle.positionX &&
+            player.positionY < obstacle.positionY + obstacle.height &&
+            player.positionY + player.height > obstacle.positionY
+        ) {
+            location.href = "gameover.html"
+        }
     })
-}, 40) // Obstacles move down every 40ms 
+}, 40) // Obstacles move down every 40ms
 
 
 /********** Event Listeners ************/
@@ -115,5 +124,3 @@ document.addEventListener("keydown", (e) => {
         player.moveRight()
     }
 })
-
-

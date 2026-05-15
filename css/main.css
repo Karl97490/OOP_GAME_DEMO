@@ -9,6 +9,7 @@ body {
     height: 100vh;
     background-color: azure;
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -21,4 +22,10 @@ body {
 .obstacle {
     background-color: blueviolet;
     position: absolute;
+}
+
+
+#page-gameover {
+    text-align: center;
+    background-color: rgb(216, 197, 232);
 }
